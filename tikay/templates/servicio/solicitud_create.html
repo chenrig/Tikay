@@ -1,0 +1,51 @@
+{% extends 'base/base.html' %}
+
+{% block title %}
+    Registro
+{% endblock %}
+
+{% block content %}
+    <form method="post">
+        {% csrf_token %}
+        
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+            	<div class="form-group">
+            		<label> Fecha Solicitud</label>
+            		<input class="form-control" type="text" name="fecha_solicitud">
+            	</div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+            	<div class="form-group">
+            		<label> Hora Solicitud</label>
+            		<input class="form-control" type="text" name="hora_solcitiud">
+            	</div>
+            </div>
+        </div>             
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <div class="form-group">
+                    <label> Nombre de usuario</label>
+                    <input class="form-control" type="text" name="usuario" value={{ user.get_username }}>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <div class="form-group">
+                    <label> Servicio</label>
+                    <input class="form-control" type="text" name="servicio">
+                </div>
+            </div>
+        </div>    
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+            	<div class="form-group">            		
+            		<button class="btn btn-primary" type="submit">Guardar</button>
+            	</div>
+            </div>
+        </div>         	
+</form>
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends 'base/base.html' %}
+
+{% block title %}
+    App Servicio
+{% endblock %}
+
+{% block content %}  
+    <div class="page-header">		  
+            <h1><a href="/" id="#page_header_link">Tikay Representaciones SAC</a></h1>
+        </div>
+        
+        <div>
+            <h3><a href="{% url 'servicio:servicio_listar' %}">La opción perfecta para tus necesidades</a></h3> 
+            <p></p>
+                         
+        </div>
+{% endblock %}

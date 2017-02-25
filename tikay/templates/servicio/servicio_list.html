@@ -1,0 +1,40 @@
+{% extends 'base/base.html' %}
+
+{% block content %}
+
+<table class="table table-bordered">
+    <thead>
+    	<tr>
+    	<!--	<td>#</td> -->    		    		
+    		<td><font color="#FFFFFF"><strong>Servicios Oferecidos</strong></td>
+    		<td><font color="#FFFFFF"><strong>Area</strong></td>
+    	</tr>
+    </thead>
+    <tbody>    	
+    	{% if object_list %}
+    	{% for servicio in object_list %}    	
+    	<tr>              
+    		<td><font color="#FFFFFF"><strong>{{ servicio.nombre }}</strong></td>
+            <td><font color="#FFFFFF"><strong>{{ servicio.area }}</strong></td>    		
+    	</tr>
+    	{% endfor %}
+
+    	{% else %}
+    	<h4><font color="#FFFFFF"><strong>No hay registros de servicio</strong></h4>
+
+    	{% endif %}
+    </tbody>
+</table>
+<ul class="pager">
+    <li>
+        {% if page_obj.has_previous %}
+            <a href="?page={{ page_obj.previous_page_number }}">Previous</a>
+        {% endif %}
+    </li>
+    <li>
+        {% if page_obj.has_next %}
+            <a href="?page={{ page_obj.next_page_number }}">Next</a>
+        {% endif %}        
+    </li>
+</ul>
+{% endblock %}

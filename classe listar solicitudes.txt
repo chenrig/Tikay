@@ -1,0 +1,2 @@
+{% if object_list %}
+{% for solicitud in object_list %}
