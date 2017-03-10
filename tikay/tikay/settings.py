@@ -75,17 +75,23 @@ WSGI_APPLICATION = 'tikay.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.10/ref/settings/#databases
 
+#DATABASES = {
+#    'default': {
+#        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#        'NAME': 'tikay',
+#        'USER': 'postgres',
+#        'PASSWORD': 'ronceros1976',
+#        'HOST': 'localhost',
+#        'PORT': 5432,
+#    }
+#}
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'tikay',
-        'USER': 'postgres',
-        'PASSWORD': 'ronceros1976',
-        'HOST': 'localhost',
-        'PORT': 5432,
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/1.10/ref/settings/#auth-password-validators
@@ -139,4 +145,4 @@ EMAIL_HOST_PASSWORD = 'ronceros#1976'
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
 MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, '..','www','media')
+MEDIA_ROOT = os.path.join(BASE_DIR, '..', 'tikay','www','media')
