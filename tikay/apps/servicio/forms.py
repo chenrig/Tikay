@@ -27,6 +27,30 @@ class SolicitudFormCreate(forms.ModelForm):
             'servicio': forms.CheckboxSelectMultiple(),
         }
 
+class SolicitudFormCreateCurto(forms.ModelForm):
+
+    class Meta:
+        model = Solicitud
+
+        fields = [            
+        #    'fecha_solicitud',
+        #    'hora_solicitud',
+        #    'usuario',
+            'servicio',
+        ]
+        labels = {
+         # 'fecha_solicitud': 'Fecha de Solicitud',
+         #   'hora_solicitud': 'Hora de Solicitud',            
+         #   'usuario': 'Usuario',
+            'servicio': 'Servicios',
+        }
+        widgets = {     
+          #  'fecha_solicitud': forms.TextInput(attrs={'class':'form-control'}),
+          #  'hora_solicitud': forms.TextInput(attrs={'class':'form-control'}),
+          #  'usuario': forms.Select(attrs={'class':'form-control'}),
+          #  'usuario': forms.TextInput(attrs={'class':'form-control'}),
+            'servicio': forms.CheckboxSelectMultiple(),
+        }
 
 class SolicitudFormUpdate(forms.ModelForm):
 

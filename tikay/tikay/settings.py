@@ -127,8 +127,8 @@ STATIC_URL = '/static/'
 
 STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
 
-LOGIN_REDIRECT_URL = reverse_lazy('servicio:solicitud_listar')
-LOGOUT_REDIRECT_URL = reverse_lazy('login')
+LOGIN_REDIRECT_URL = reverse_lazy('servicio:index')
+LOGOUT_REDIRECT_URL = reverse_lazy('servicio:index')
 
 DEFAULT_FROM_EMAIL = 'chenrig@gmail.com'
 EMAIL_USE_TLS = True
@@ -137,3 +137,6 @@ EMAIL_PORT = 587 #25
 EMAIL_HOST_USER = 'chenrig@gmail.com'
 EMAIL_HOST_PASSWORD = 'ronceros#1976'
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, '..','www','media')

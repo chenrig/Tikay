@@ -1,9 +1,38 @@
-{% extends 'base/base.html' %}
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="es">
 
+<head>    
+    <meta charset="UTF-8">
+
+    <link rel="stylesheet" href="{% static 'css/United/bootstrap.min.css' %}">
+
+    <title>{% block title %} Guardar Solicitud {% endblock %}</title>
+
+</head>
+
+<body>
 {% block content %}
 
-	<p><font color="#FFFFFF"><strong>Gracias por solicitar nuestros servicios</strong></p>
-	<p><font color="#FFFFFF"><strong>Contactaremos en breve</strong></p>
-	<p><a href="{% url 'servicio:solicitud_listar' %}">Volver para listagen</a></p>
+	<p><font color="#151515"><strong>Gracias por solicitar nuestros servicios</strong></p>
+	<p><font color="#151515"><strong>Contactaremos en breve</strong></p>
+
+	<div class="btn btn-default"> 
+	      
+        <a href="{% url 'servicio:solicitud' %}">Volver para listagen</a>
+
+        <div class="cleaner"></div>
+    </div>
+	
 	
 {% endblock %}
+
+<div id="templatemo_footer_wrapper">
+    <div id="templatemo_footer">
+        Copyright © 2017 <a href="#">Tikay Representaciones S.A.C.</a>
+        <div class="cleaner"></div>
+    </div>
+</div>
+
+</body>
+</html>

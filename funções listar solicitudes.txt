@@ -1,2 +1,0 @@
-{% if solicitudes %}
-{% for solicitud in solicitudes %}  

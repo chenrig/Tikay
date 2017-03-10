@@ -22,7 +22,7 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^servicio/', include('apps.servicio.urls', namespace="servicio")),
     url(r'^usuario/', include('apps.usuario.urls', namespace="usuario")),
-    url(r'^accounts/login/', login,  {'template_name':'index.html'}, name="login"),
+    url(r'^accounts/login/', login,  {'template_name':'index_antigo.html'}, name="login"),
     url(r'^logout/', logout_then_login, name="logout"),
     url(r'^reset/password_reset', password_reset,
         {'template_name':'registration/password_reset_form.html', 
@@ -36,5 +36,10 @@ urlpatterns = [
     	name='password_reset_confirm'),
     url(r'^reset/done', password_reset_complete, {'template_name':'registration/password_reset_complete.html'}, 
     	name='password_reset_complete'),     	 
+  #  url(r'^galeria/', include('galeria.urls', namespace='galeria')),
 ]
 
+from django.conf import settings
+from django.conf.urls.static import static
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

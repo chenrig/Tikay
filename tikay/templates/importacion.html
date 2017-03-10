@@ -1,0 +1,222 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Tikay - Importación</title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<!-- templatemo 339 graphite -->
+<!-- 
+Graphite Template 
+http://www.templatemo.com/preview/templatemo_339_graphite 
+-->
+<link href="static/css/templatemo_style.css" rel="stylesheet" type="text/css" />
+
+<script language="javascript" type="text/javascript">
+function clearText(field)
+{
+    if (field.defaultValue == field.value) field.value = '';
+    else if (field.value == '') field.value = field.defaultValue;
+}
+</script>
+
+<link rel="stylesheet" type="text/css" href="static/css/ddsmoothmenu.css" />
+
+<script type="text/javascript" src="static/js/jquery.min.js"></script>
+<script type="text/javascript" src="static/js/ddsmoothmenu.js">
+
+/***********************************************
+* Smooth Navigational Menu- (c) Dynamic Drive DHTML code library (www.dynamicdrive.com)
+* This notice MUST stay intact for legal use
+* Visit Dynamic Drive at http://www.dynamicdrive.com/ for full source code
+***********************************************/
+
+</script>
+
+<script type="text/javascript">
+
+ddsmoothmenu.init({
+	mainmenuid: "templatemo_menu", //menu DIV id
+	orientation: 'h', //Horizontal or vertical menu: Set to "h" or "v"
+	classname: 'ddsmoothmenu', //class added to menu's outer DIV
+	//customtheme: ["#1c5a80", "#18374a"],
+	contentsource: "markup" //"markup" or ["container_id", "path_to_menu_file"]
+})
+
+</script>
+
+<!--////// CHOOSE ONE OF THE 3 PIROBOX STYLES  \\\\\\\-->
+<link href="static/css_pirobox/white/style.css" media="screen" title="shadow" rel="stylesheet" type="text/css" />
+<!--<link href="css_pirobox/white/style.css" media="screen" title="white" rel="stylesheet" type="text/css" />
+<link href="css_pirobox/black/style.css" media="screen" title="black" rel="stylesheet" type="text/css" />-->
+<!--////// END  \\\\\\\-->
+
+<!--////// INCLUDE THE JS AND PIROBOX OPTION IN YOUR HEADER  \\\\\\\-->
+<script type="text/javascript" src="static/js/jquery.min.js"></script>
+<script type="text/javascript" src="static/js/piroBox.1_2.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+$().piroBox({
+        my_speed: 600, //animation speed
+        bg_alpha: 0.5, //background opacity
+        radius: 4, //caption rounded corner
+        scrollImage : false, // true == image follows the page, false == image remains in the same open position
+        pirobox_next : 'piro_next', // Nav buttons -> piro_next == inside piroBox , piro_next_out == outside piroBox
+        pirobox_prev : 'piro_prev',// Nav buttons -> piro_prev == inside piroBox , piro_prev_out == outside piroBox
+        close_all : '.piro_close',// add class .piro_overlay(with comma)if you want overlay click close piroBox
+        slideShow : 'slideshow', // just delete slideshow between '' if you don't want it.
+        slideSpeed : 4 //slideshow duration in seconds(3 to 6 Recommended)
+});
+});
+</script>
+<!--////// END  \\\\\\\-->
+  
+</head>
+<body id="sub_page">
+<div id="templatemo_wrapper">
+	<div id="templatemo_top">
+    	<div id="templatemo_login">
+            <form action="{% url 'servicio:login' %}" method="post">  
+            {% csrf_token %}          
+              <input type="text" value="username" name="username" size="10" id="username" title="username" onfocus="clearText(this)" onblur="clearText(this)" class="txt_field" />
+              <input type="password" value="password" name="password" size="10" id="password" title="password" onfocus="clearText(this)" onblur="clearText(this)" class="txt_field" />
+              <input type="submit" name="Search" value="" alt="Search" id="searchbutton" title="Search" class="sub_btn"  />
+            </form>
+		</div>
+    </div> <!-- end of top -->
+    
+<div id="templatemo_header">
+      <div id="site_title">
+          <h1><a href="#">Tikay Representaiones S.A.C.</a></h1>
+        </div>
+        <div id="templatemo_menu" class="ddsmoothmenu">
+            <ul>
+                <li><a href="{% url 'servicio:index' %}">Home</a>
+          <!--  <li><a href="about.html">Sobre</a> -->
+                <li><a href="{% url 'servicio:sobre' %}">Sobre</a>
+                    <ul>
+                    <!--    <li><a href="#">Sub menu 1</a></li>
+                        <li><a href="#">Sub menu 2</a></li>
+                        <li><a href="#">Sub menu 3</a></li>  -->
+                    </ul>
+                </li>
+              <li><a href="{% url 'servicio:servicio' %}">Servicios</a>
+                    <ul>
+                        <li><a href="{% url 'servicio:psicologia' %}">Psicología</a></li>
+                        <li><a href="{% url 'servicio:comunicacion' %}">Comunicaciones</a></li>
+                        <li><a href="{% url 'servicio:asesoria' %}">Assesoría Legal</a></li>
+                        <li><a href="{% url 'servicio:importacion' %}">Importación</a></li>
+                        <li><a href="{% url 'servicio:exportacion' %}">Exportación</a></li>
+                        <li><a href="{% url 'servicio:capacitacion' %}">Capacitación</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Usuario</a>
+                    <ul>
+                    <!--    <li><a href="{% url 'usuario:registrar' %}">Cadastrese</a></li> -->
+                        <li><a href="{% url 'servicio:cadastro' %}">Cadastrese</a></li>
+                    <!--    <li><a href="#">Login</a></li> -->
+                        <li><a href="{% url 'servicio:Crear' %}">Solicitar Servicios</a></li>
+                        <li><a href="{% url 'servicio:solicitud' %}">Servicios Solicitados</a></li>
+                        <li><a href="{% url 'servicio:logout' %}">Logout</a></li>                        
+                    </ul>
+                </li>
+                <li><a href="{% url 'servicio:contacto' %}">Contacto</a>
+            </ul>
+            <br style="clear: left" />
+        </div> <!-- end of templatemo_menu -->
+    </div> <!-- end of header -->
+    
+    <div id="templatemo_main">
+    		<h2>Servicios de Importación</h2>
+            <p><em>En economía, las importaciones son el transporte legítimo de bienes y servicios del extranjero los cuales son adquiridos por un país para distribuirlos en el interior de este. Las importaciones pueden ser cualquier producto o servicio recibido dentro de la frontera de un Estado con propósitos comerciales. <a href="https://es.wikipedia.org/wiki/Importación" rel="nofollow"><strong>Importación - Wikipedia, la enciclopedia libre.</strong></a></a></em></p>   
+    
+            <a href="{% url 'servicio:Crear' %}"><strong>Solicite</strong></a> 
+                   
+            <div class="cleaner h30"></div>            
+          	<div id="gallery">
+            <div class="gallery_box">            
+              <a class="pirobox" href="static/images/gallery/04_l.jpg" title="Transporte legítimo de bienes y servicios del extranjero.">
+                <span class="image_frame_300"><span></span>
+                    <img src="static/images/gallery/04_t.jpg" alt="Image 04" />
+                </span>
+              </a>
+            <div class="cleaner"></div>
+            </div>
+				
+            
+                
+            </div>
+<!-- SERVICIOS -->
+<table class="table table-bordered">
+    <thead>
+      <tr>                    
+    <!--    <td><strong>Servicios Oferecidos</strong></td>
+        <td><strong>Area</strong></td>-->
+      </tr>
+    </thead>
+    <tbody>     
+      {% if object_list %}
+        {% for servicio in object_list %}     
+          <tr>              
+            <td><li><strong>{{ servicio.nombre }}</strong></li></td>
+        <!--    <td><strong>{{ servicio.area }}</strong></td> -->     
+          </tr>
+        {% endfor %}
+
+      {% else %}
+   
+        <h4>No hay servicios de importación a seren ofrecidos</h4>
+
+      {% endif %}
+    </tbody>
+</table>
+
+<div class="pagination">
+    <span class="step-links">
+    
+        {% if object_list.has_previous %}
+            <a href="?page={{ object_list.previous_page_number }}">Previous</a>
+        {% endif %}
+        
+        <span class="current">
+            Page {{ object_list.number }} of {{ object_list.paginator.num_pages }}.
+        </span>
+    
+        {% if object_list.has_next %}
+            <a href="?page={{ object_list.next_page_number }}">Next</a>
+        {% endif %}        
+    
+    </span>
+</div>
+
+<!-- SERVICIOS -->
+            <div class="cleaner"></div>
+            
+            	<div class="pagging">
+					<ul>
+						<li><a href="{% url 'servicio:asesoria' %}">Previous</a></li>
+                        <li><a href="{% url 'servicio:servicio' %}">1</a></li>
+                        <li><a href="{% url 'servicio:psicologia' %}">2</a></li>
+                        <li><a href="{% url 'servicio:comunicacion' %}">3</a></li>
+                        <li><a href="{% url 'servicio:asesoria' %}">4</a></li>
+                        <li><a href="{% url 'servicio:importacion' %}">5</a></li>
+                        <li><a href="{% url 'servicio:exportacion' %}">6</a></li>
+                        <li><a href="{% url 'servicio:capacitacion' %}">7</a></li>
+                        <li><a href="{% url 'servicio:exportacion' %}">Next</a></li>
+					</ul>
+				<div class="cleaner"></div>
+			</div>
+
+        <div class="cleaner"></div>
+    </div> <!-- end of main -->
+</div> <!-- end of wrapper -->
+
+<div id="templatemo_footer_wrapper">
+    <div id="templatemo_footer">
+        Copyright © 2017 <a href="#">Tikay Representaciones S.A.C.</a>
+        <div class="cleaner"></div>
+    </div>
+</div> 
+  
+</body>
+</html>

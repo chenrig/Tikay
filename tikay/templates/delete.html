@@ -1,0 +1,44 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="es">
+
+<head>    
+    <meta charset="UTF-8">
+
+    <link rel="stylesheet" href="{% static 'css/United/bootstrap.min.css' %}">
+
+    <title>{% block title %} Editar Solicitud {% endblock %}</title>
+
+</head>
+
+<body>
+
+<table class="table table-bordered">
+    <thead>
+      <tr>                    
+    <!--    <td><strong>Servicios Oferecidos</strong></td>
+        <td><strong>Area</strong></td>-->
+      </tr>
+    </thead>
+    <tbody> 
+       <form method="post">
+        {% csrf_token %}
+        <h3>Desea eliminar el registro de solicitud?</h3>
+        <button class="btn btn-danger" type="submit">Sí, eliminar</button>
+        <a class="btn btn-default" href="{% url 'servicio:solicitud' %}">Cancelar</a>
+    </form>
+    </tbody>
+
+</table>
+    
+</div> <!-- end of main -->
+
+<div id="templatemo_footer_wrapper">
+    <div id="templatemo_footer">
+        Copyright © 2017 <a href="#">Tikay Representaciones S.A.C.</a>
+        <div class="cleaner"></div>
+    </div>
+</div>
+
+</body>
+</html>

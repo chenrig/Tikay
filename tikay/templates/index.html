@@ -1,38 +1,250 @@
-{% extends 'base/base.html' %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Tikay Representaciones S.A.C.</title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<!-- templatemo 339 graphite -->
+<!-- 
+Graphite Template 
+http://www.templatemo.com/preview/templatemo_339_graphite 
+-->
+<link href="static/css/templatemo_style.css" rel="stylesheet" type="text/css" />
 
-{% block title %}
-Usuario
-{% endblock %}
+<script type="text/javascript" src="static/js/swfobject.js"></script>
+<script type="text/javascript">
+	var flashvars = {};
+	flashvars.xml_file = "flashmo_224_photo_list.xml";
+	var params = {};
+	params.wmode = "transparent";
+	var attributes = {};
+	attributes.id = "slider";
+	swfobject.embedSWF("flashmo_224_grid_slider.swf", "flashmo_slider", "940", "400", "9.0.0", false, flashvars, params, attributes);
+</script>
 
-{% block navbar %}
-{% endblock %}
+<script language="javascript" type="text/javascript">
+function clearText(field)
+{
+    if (field.defaultValue == field.value) field.value = '';
+    else if (field.value == '') field.value = field.defaultValue;
+}
+</script>
 
-{% block content %}
-<form method="post">
-    {% csrf_token %}
-    <div class="row">
-        <div class="col-md-8 col-md-offset-3">
-            <div class="form-group">
-            	<label for="username">Nombre de usuario:</label>
-            	<input class="form-control" type="text" name="username">
-            </div>
+<link rel="stylesheet" type="text/css" href="static/css/ddsmoothmenu.css" />
+
+<script type="text/javascript" src="static/js/jquery.min.js"></script>
+<script type="text/javascript" src="static/js/ddsmoothmenu.js">
+
+/***********************************************
+* Smooth Navigational Menu- (c) Dynamic Drive DHTML code library (www.dynamicdrive.com)
+* This notice MUST stay intact for legal use
+* Visit Dynamic Drive at http://www.dynamicdrive.com/ for full source code
+***********************************************/
+
+</script>
+
+<script type="text/javascript">
+
+ddsmoothmenu.init({
+	mainmenuid: "templatemo_menu", //menu DIV id
+	orientation: 'h', //Horizontal or vertical menu: Set to "h" or "v"
+	classname: 'ddsmoothmenu', //class added to menu's outer DIV
+	//customtheme: ["#1c5a80", "#18374a"],
+	contentsource: "markup" //"markup" or ["container_id", "path_to_menu_file"]
+})
+
+</script>
+  
+</head>
+<body id="home">
+<div id="templatemo_wrapper">
+	<div id="templatemo_top">        
+    	<div id="templatemo_login">        
+            <form action="{% url 'servicio:login' %}" method="post">  
+            {% csrf_token %}          
+              <input type="text" value="username" name="username" size="10" id="username" title="username" onfocus="clearText(this)" onblur="clearText(this)" class="txt_field" />
+              <input type="password" value="password" name="password" size="10" id="password" title="password" onfocus="clearText(this)" onblur="clearText(this)" class="txt_field" />
+              <input type="submit" name="Search" value="" alt="Search" id="searchbutton" title="Search" class="sub_btn"  />
+            </form>
+		</div>
+    </div> <!-- end of top -->
+    
+  	<div id="templatemo_header">
+    	<div id="site_title">
+        	<h1><a href="#">Tikay Representaiones S.A.C.</a></h1>            
         </div>
-    </div>   
-    <div class="row">
-        <div class="col-md-8 col-md-offset-3">
-            <div class="form-group">
-                <label for="username">Contraseña:</label>
-                <input class="form-control" type="password" name="password">
+        <div id="templatemo_menu" class="ddsmoothmenu">
+            <ul>
+              	<li><a href="{% url 'servicio:index' %}">Home</a>
+         	<!--	<li><a href="about.html">Sobre</a> -->
+                <li><a href="{% url 'servicio:sobre' %}">Sobre</a>
+                 <!--   <ul>
+                        <li><a href="#">Sub menu 1</a></li>
+                        <li><a href="#">Sub menu 2</a></li>
+                        <li><a href="#">Sub menu 3</a></li>
+                    </ul> -->
+              	</li>
+          		<li><a href="{% url 'servicio:servicio' %}">Servicios</a>
+                    <ul>
+                        <li><a href="{% url 'servicio:psicologia' %}">Psicología</a></li>
+                        <li><a href="{% url 'servicio:comunicacion' %}">Comunicaciones</a></li>
+                        <li><a href="{% url 'servicio:asesoria' %}">Asesoría Legal</a></li>
+                        <li><a href="{% url 'servicio:importacion' %}">Importación</a></li>
+                        <li><a href="{% url 'servicio:exportacion' %}">Exportación</a></li>
+                        <li><a href="{% url 'servicio:capacitacion' %}">Capacitación</a></li>
+                  	</ul>
+              	</li>
+              	<li><a href="#">Usuario</a>
+                    <ul>
+                    <!--    <li><a href="{% url 'usuario:registrar' %}">Cadastrese</a></li> -->
+                        <li><a href="{% url 'servicio:cadastro' %}">Cadastrese</a></li>
+                    <!--    <li><a href="#">Login</a></li> -->
+                        <li><a href="{% url 'servicio:Crear' %}">Añadir Solicitudes</a></li>
+                        <li><a href="{% url 'servicio:solicitud' %}">Listar Solicitudes</a></li>
+                        <li><a href="{% url 'servicio:logout' %}">Logout</a></li>                        
+                    </ul>
+                </li>
+              	<li><a href="{% url 'servicio:contacto' %}">Contacto</a>
+            </ul>
+            <br style="clear: left" />
+        </div> <!-- end of templatemo_menu -->
+    </div> <!-- end of header -->
+    
+    <div id="templatemo_middle">
+    <div class="image_frame_300 image_fl"><span></span><img src="static/images/tikay.jpg" alt="Image 01" /></div>
+       <!-- <div id="mid_slider">
+            <div id="flash_grid_slider">
+                <a rel="nofollow" href="http://www.adobe.com/go/getflashplayer">
+                    <img src="http://www.adobe.com/images/shared/download_buttons/get_flash_player.gif" alt="Get Adobe Flash player" />
+                </a>
             </div>
+        </div> -->
+        <div id="mid_left">
+            <div id="mid_title">
+                Holla! {{ user.username|capfirst }}<span>Tikay és la opción perfecta para tus necesidades.</span>
+      </div>
+            <p>Tenemos un compromiso de servirle lo mejor que podamos. Para eso hemos de profesionales cualificados y preparados para trabajar en diferentes líneas de servicios que tenemos para ofrecerte.</p>
+            <div id="learn_more"><a href="{% url 'servicio:servicio' %}">Servicios</a></div>
         </div>
-    </div> 
-    <div class="row">
-        <div class="col-md-8 col-md-offset-3">
-            <div class="form-group">
-                <a href="{% url 'password_reset' %}">Olvidé mi contraseña:</a>
-                <input class="btn btn-primary" type="submit" value="Ingresar">
+        <div class="cleaner"></div>
+    </div> <!-- end of templatemo_middle -->
+    
+    <div id="templatemo_main">
+    	<div class="col_fw">
+            <div class="col_w240 fp_service_box">
+	            <img src="static/images/icon-01.png" alt="Service 01" />
+    			<h3>Servicio 1 <br /><span>Psicología</span></h3>               
+                <p>Dos consultorios en Lima con profisionales preparados para atenderte en tus necesidades.<a href="{% url 'servicio:psicologia' %}">Detalle</a></p>
+             <!--   <a class="more" href="#">Detalle</a> -->
             </div>
+            <div class="col_w240 fp_service_box">
+            	<img src="static/images/icon-02.png" alt="Service 02" />
+                <h3>Servicio 2 <br /><span>Comunicaciones</span></h3>                
+                <p>Profisional con dos premios en documentario en periodismo con preparo para atendenterte.<a href="{% url 'servicio:comunicacion' %}">Detalle</a></p>
+            <!--    <a class="more" href="#">Detalle</a> -->
+            </div>
+            <div class="col_w240 fp_service_box col_last">
+	            <img src="static/images/icon-03.png" alt="Service 03" />
+                <h3>Servicio 3 <br /><span>Asesoría Legal</span></h3>
+                <p>Profisional en abocacia con experiencia en cualquer asesoria legal para tranquilizarte.<a href="{% url 'servicio:asesoria' %}">Detalle</a></p>
+            <!--    <a class="more" href="#">Detalle</a> -->
+            </div>
+            <div class="col_w240 fp_service_box col_last">
+	            <img src="static/images/icon-04.png" alt="Service 04" />
+                <h3>Servicio 4 <br /><span>Importación</span></h3>
+                <p>Si vossa necesidade es importación, hable com nosotros y te ayudaremos.<a href="{% url 'servicio:importacion' %}">Detalle</a></p>
+            <!--    <a class="more" href="#">Detalle</a> -->
+            </div>
+            <div class="col_w240 fp_service_box col_last">
+                <img src="static/images/icon-03.png" alt="Service 04" />
+                <h3>Servicio 5 <br /><span>Exportación</span></h3>
+                <p>Quieres exportar? Entonces vengas hasta nosotros que estamos prontos a exportar.<a href="{% url 'servicio:exportacion' %}">Detalle</a></p>
+            <!--   <a class="more" href="#">Detalle</a> -->
+            </div>
+            <div class="col_w240 fp_service_box">
+                <img src="static/images/icon-01.png" alt="Service 01" />
+                <h3>Servicio 6 <br /><span>Capacitación</span></h3>               
+                <p>Profisionales preparados en areas distintas para oferecerte capacitación en poco tiempo.<a href="{% url 'servicio:capacitacion' %}">Detalle</a></p>
+             <!--   <a class="more" href="#">Detalle</a> -->
+            </div>
+            <div class="cleaner"></div>
         </div>
-    </div> 
-</form>
-{% endblock %} 
+        
+        <div class="col_fw_last">
+        	<div class="col_allw300">                
+            	<h4>Últimas Actualizaciones</h4>
+                    {% if object_list %}        
+                        {% for informacion in object_list %}
+                            {% if informacion.ult_actualizacion_titulo and informacion.ult_actualizacion_texto and informacion.ult_actualizacion_link  %}
+                                <div class="news_box">                              
+                                    <a href="{{ informacion.ult_actualizacion_link }}">{{ informacion.ult_actualizacion_titulo }}</a>
+                                    <p>{{ informacion.ult_actualizacion_texto }}</p>                                    
+                                </div>
+
+                            {% endif %}
+                        {% endfor %}
+                    {% else %}   
+                        <h6></h6>
+                    {% endif %}                    
+                <div class="cleaner h20"></div>
+            <!--    <a class="more" href="#">Más</a> -->
+            </div>
+          <div class="col_allw300">
+                {% if object_list %}        
+                        {% for informacion in object_list %}
+                            {% if informacion.video_texto and informacion.video_titulo  and informacion.video_sub_titulo and informacion.video_link and informacion.video_imagen %}
+                            <div class="news_box">
+                                <h3>{{ informacion.video_titulo }}</h3> 
+                                <div class="image_frame_300"><span></span><img src="{{ informacion.video_imagen.url }}" alt="Image 01" /></div>
+                                <p><em><a href="{{ informacion.video_link }}" rel="nofollow"><strong>{{ informacion.video_sub_titulo }}</strong></a></em></p>
+                                <p>{{ informacion.video_texto }}</p>            
+                            </div>
+                            <ul></ul>
+                            {% endif %}                      
+                        {% endfor %}
+                    {% else %}   
+                        <h6></h6>
+                    {% endif %} 
+            	
+				<div class="cleaner h20"></div>
+          <!-- <a class="more" href="https://www.youtube.com/watch?v=wZTLiAUBYnM">Más</a> -->
+            </div>
+             <div class="col_allw300 col_rm">
+                <h4>Enlaces Interesantes</h4>
+            <div class="sidebar_box">
+                <ul class="templatemo_list">
+                    {% if object_list %}        
+                        {% for informacion in object_list %}
+                            {% if informacion.enlace_titulo %}
+                                <li>                              
+                                    <a href="{{ informacion.enlace_link }}">{{ informacion.enlace_titulo }}</a>              
+                                </li>
+                            {% endif %}
+                        {% endfor %}
+                    {% else %}   
+                        <h6></h6>
+                    {% endif %}                    
+                </ul>
+            </div>
+           <!-- 	<h3>Documental El Cajon</h3>
+                <div class="image_frame_300"><span></span><img src="static/images/cajon_peruano.jpg" alt="Image 01" /></div>
+            <p><em>The roots of the cajon. De Sandra Ronceros.</em></p>
+            <p>Documental del el <a href="https://www.youtube.com/watch?v=wZTLiAUBYnM" rel="nofollow"><strong>cajon peruano.</strong></a> Este es un documental fantástico sobre los orígenes del cajón, y cómo se desarrolla y se hace popular en Europa.</p>
+                <div class="cleaner h20"></div>
+             <a class="more" href="https://www.youtube.com/watch?v=wZTLiAUBYnM">Más</a> -->
+          	</div>
+            <div class="cleaner"></div>  
+        </div>
+        <div class="cleaner"></div>
+    </div> <!-- end of main -->
+</div> <!-- end of wrapper -->
+<div id="templatemo_footer_wrapper">
+    <div id="templatemo_footer">
+        Copyright © 2017 <a href="#">Tikay Representaciones S.A.C.</a>
+        <div class="cleaner"></div>
+    </div>
+</div> 
+  
+</body>
+</html>
